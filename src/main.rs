@@ -161,7 +161,7 @@ opencv_pixels = {}",
     println!("{} pass", N_ITERATIONS - n_fails);
     println!("{} fail", n_fails);
     println!(
-        "{} success rate",
+        "{:3.3}% success rate",
         (1.0 - n_fails as f64 / N_ITERATIONS as f64) * 100.0
     );
 
