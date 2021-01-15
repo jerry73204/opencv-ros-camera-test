@@ -1,0 +1,24 @@
+[package]
+name = "opencv-ros-camera-test"
+version = "0.1.0"
+authors = ["jerry73204 <jerry73204@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.38"
+cam-geom = "0.5.0"
+nalgebra = "0.24.0"
+opencv = "0.48.0"
+opencv-ros-camera = "0.5.0"
+rand = "0.8.2"
+approx = "0.4.0"
+
+[dependencies.cv-convert]
+version = "0.2.0"
+# git = "https://github.com/jerry73204/rust-cv-convert.git"
+# rev = "1c4dcfb543763adced2fe7f10c0eea44bf2200cc"
+path = "/home/jerry73204/projects/cv-convert"
+default-features = false
+features = ["opencv-4", "opencv-buildtime-bindgen", "nalgebra"]
