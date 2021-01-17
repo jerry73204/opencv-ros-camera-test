@@ -140,16 +140,27 @@ fn main() -> Result<()> {
 
             println!(
                 "==== Numerical difference detected ====
+extrinsic = {}
 (roll, pitch, yaw) = {:?}
 translation = {}
+(fx, fy, cx, cy) = {:?}
 distortion = {}
-points =  {}
+world_points =  {}
+camera_points =  {}
 rust_pixels =  {}
 opencv_pixels = {}",
+                ext_params.matrix(),
                 (roll.to_degrees(), pitch.to_degrees(), yaw.to_degrees()),
                 ext_params.translation(),
+                (
+                    int_params.k[(0, 0)],
+                    int_params.k[(1, 1)],
+                    int_params.k[(0, 2)],
+                    int_params.k[(1, 2)],
+                ),
                 distortoin_vec,
                 points.data,
+                ext_params.world_to_camera(&points).data,
                 rust_pixels,
                 opencv_pixels
             );
